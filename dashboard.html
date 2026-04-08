@@ -1,0 +1,15 @@
+<h2>Your Notes</h2>
+<a href="/create/">New Note</a>
+
+{% for note in notes %}
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content|truncatewords:10 }}</p>
+
+    <a href="/edit/{{ note.id }}/">Edit</a>
+    <a href="/delete/{{ note.id }}/">Delete</a>
+    <a href="/versions/{{ note.id }}/">Versions</a>
+
+    {% if note.is_public %}
+        <p>Share: /share/{{ note.share_id }}/</p>
+    {% endif %}
+{% endfor %}

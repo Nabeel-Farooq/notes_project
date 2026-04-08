@@ -1,0 +1,6 @@
+<h2>Version History</h2>
+
+{% for v in versions %}
+    <p>{{ v.updated_at }}</p>
+    <pre>{{ v.content }}</pre>
+{% endfor %}
